@@ -47,7 +47,7 @@
           }
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
-
+          var alger =  alg[0].code.text;
           var fname = '';
           var lname = '';
 
@@ -69,7 +69,7 @@
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
-          //p.allergy = "div"
+          p.allergy = alger;
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
@@ -106,7 +106,7 @@
       ldl: {value: ''},
       hdl: {value: ''},
       temp: {value: ''},
-      alg: {value: ''},
+      allergy: {value: ''},
     };
   }
 
@@ -151,6 +151,7 @@
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
     $('#temp').html(p.temp);
+    $(#allergy).html(p.allergy);
   };
 
 })(window);
