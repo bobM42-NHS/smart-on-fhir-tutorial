@@ -27,12 +27,20 @@
                       }
                     }
                   });
+        
+        var allergy = smart.patient.api.fetchAll({
+                    type: 'Observation',
+                    query: {
+                      "clinical-status": { "active",
+                    }
+          });
+        
+        $.when(pt, obv, allergy).fail(onError);
 
-        $.when(pt, obv).fail(onError);
-
-        $.when(pt, obv).done(function(patient, obv) {
+        $.when(pt, obv, allergy).done(function(patient, obv, alg) {
           console.log(patient);
           console.log(obv);
+          console.log(alg);
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 
