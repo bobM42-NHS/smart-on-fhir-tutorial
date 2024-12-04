@@ -41,6 +41,9 @@
           console.log(patient);
           console.log(obv);
           console.log(alg);
+
+          console.log(alg.code[0]);
+          
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
 
@@ -65,6 +68,7 @@
           p.fname = fname;
           p.lname = lname;
           p.height = getQuantityValueAndUnit(height[0]);
+          //p.allergy = "div"
 
           if (typeof systolicbp != 'undefined')  {
             p.systolicbp = systolicbp;
@@ -101,6 +105,7 @@
       ldl: {value: ''},
       hdl: {value: ''},
       temp: {value: ''},
+      alg: {value: ''},
     };
   }
 
