@@ -29,7 +29,7 @@
                   });
         
         var allergy = smart.patient.api.fetchAll({
-                    type: 'Observation',
+                    type: 'AllergyIntolerance',
                     query: {
                       "clinical-status": { "active",
                     }
