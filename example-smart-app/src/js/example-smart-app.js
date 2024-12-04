@@ -42,7 +42,7 @@
           console.log(obv);
           console.log(alg);
 
-          console.log(alg.code[0]);
+          //console.log(alg[0]);
           
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
