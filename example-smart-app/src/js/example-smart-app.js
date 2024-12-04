@@ -21,7 +21,8 @@
                               //'http://loinc.org|8480-6', //systolic blood pressure
                               'http://loinc.org|2085-9', //measurement of cholesterol in high-density lipoprotein (HDL) in serum or plasma
                               'http://loinc.org|2089-1', //Cholesterol in LDL [Mass/volume] in Serum or Plasma.
-                              'http://loinc.org|85354-9' //blood pressure systolic and diastolic
+                              'http://loinc.org|85354-9', //blood pressure systolic and diastolic
+                              'http://loinc.org|8310-5' //Temprature
                               ] 
                       }
                     }
@@ -48,6 +49,7 @@
           var diastolicbp = getBloodPressureValue(byCodes('85354-9'),'8462-4');
           var hdl = byCodes('2085-9');
           var ldl = byCodes('2089-1');
+          var temp = byCodes('8310-5');
 
           var p = defaultPatient();
           p.birthdate = patient.birthDate;
@@ -90,6 +92,7 @@
       diastolicbp: {value: ''},
       ldl: {value: ''},
       hdl: {value: ''},
+      temp: {value: ''},
     };
   }
 
@@ -133,6 +136,7 @@
     $('#diastolicbp').html(p.diastolicbp);
     $('#ldl').html(p.ldl);
     $('#hdl').html(p.hdl);
+    $('#temp').html(p.temp);
   };
 
 })(window);
